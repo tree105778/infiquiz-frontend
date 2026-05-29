@@ -1,0 +1,36 @@
+export const colors = {
+  primary: '#533afd',
+  primaryDeep: '#4434d4',
+  primaryPress: '#2e2b8c',
+  primarySoft: '#665efd',
+  primarySubdued: '#b9b9f9',
+  primaryAlpha08: 'rgba(83, 58, 253, 0.08)',
+  primaryAlpha16: 'rgba(83, 58, 253, 0.16)',
+  primaryAlpha40: 'rgba(83, 58, 253, 0.4)',
+  primaryAlpha00: 'rgba(83, 58, 253, 0)',
+  brandDark900: '#1c1e54',
+  ruby: '#ea2261',
+  magenta: '#f96bee',
+  lemon: '#9b6829',
+  success: '#6ce0a7',
+
+  canvas: '#ffffff',
+  canvasSoft: '#f6f9fc',
+  canvasCream: '#f5e9d4',
+  hairline: '#e3e8ee',
+  hairlineInput: '#a8c3de',
+
+  ink: '#0d253d',
+  inkSecondary: '#273951',
+  inkMute: '#64748d',
+  inkMute2: '#61718a',
+  onPrimary: '#ffffff',
+
+  shadowBlue: 'rgba(0, 55, 112, 1)',
+  shadowBlue08: 'rgba(0, 55, 112, 0.08)',
+  shadowBlue04: 'rgba(0, 55, 112, 0.04)',
+  scrim: 'rgba(13, 37, 61, 0.6)',
+
+  skeletonStart: '#eef1f5',
+  skeletonMid: '#e3e8ee',
+} as const;
