@@ -3,7 +3,7 @@ import {
   type SpinnerRecipeVariants,
   spinner,
 } from '@/design-system/components/Spinner/Spinner.css';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 
 export type SpinnerProps = HTMLAttributes<HTMLSpanElement> &
   SpinnerRecipeVariants;

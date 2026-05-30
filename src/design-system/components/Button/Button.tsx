@@ -3,7 +3,7 @@ import {
   type ButtonRecipeVariants,
   button,
 } from '@/design-system/components/Button/Button.css';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   ButtonRecipeVariants;

@@ -1,6 +1,6 @@
 import { forwardRef, type InputHTMLAttributes } from 'react';
 import { textInput } from '@/design-system/components/TextInput/TextInput.css';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 
 export type TextInputProps = InputHTMLAttributes<HTMLInputElement>;
 

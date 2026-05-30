@@ -3,7 +3,7 @@ import {
   type CardRecipeVariants,
   card,
 } from '@/design-system/components/Card/Card.css';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 
 export type CardProps = HTMLAttributes<HTMLDivElement> & CardRecipeVariants;
 export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(

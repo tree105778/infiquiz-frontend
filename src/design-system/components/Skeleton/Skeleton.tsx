@@ -1,6 +1,6 @@
 import type { CSSProperties, HTMLAttributes } from 'react';
 import { skeleton } from '@/design-system/components/Skeleton/Skeleton.css';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 
 export type SkeletonProps = HTMLAttributes<HTMLDivElement> & {
   width?: CSSProperties['width'];

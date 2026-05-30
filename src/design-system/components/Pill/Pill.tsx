@@ -1,5 +1,5 @@
 import { forwardRef, type HTMLAttributes } from 'react';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 import { type PillRecipeVariants, pill } from './Pill.css';
 
 export type PillProps = HTMLAttributes<HTMLSpanElement> & PillRecipeVariants;

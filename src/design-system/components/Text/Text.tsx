@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 import { text } from '@/design-system/components/Text/Text.css';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 
 type TextVariants = NonNullable<Parameters<typeof text>[0]>;
 

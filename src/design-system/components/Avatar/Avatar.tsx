@@ -1,7 +1,7 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { type ButtonHTMLAttributes, forwardRef } from 'react';
 import { avatar, sizeVar } from '@/design-system/components/Avatar/Avatar.css';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 
 export type AvatarProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   initial?: string;

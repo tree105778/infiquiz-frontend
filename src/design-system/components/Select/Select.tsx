@@ -1,6 +1,6 @@
 import { forwardRef, type SelectHTMLAttributes } from 'react';
 import { select } from '@/design-system/components/Select/Select.css';
-import { cx } from '@/utils/cx';
+import { cx } from '@/design-system/utils/cx';
 
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;
 
