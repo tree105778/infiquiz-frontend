@@ -30,7 +30,7 @@ function ToastDemo({ message, kind, ms }: ToastDemoProps) {
 }
 
 const meta = {
-  title: 'Components/Toast',
+  title: 'components/Toast',
   component: ToastDemo,
   tags: ['autodocs'],
   decorators: [
