@@ -4,6 +4,16 @@ import type { Decorator, Preview } from '@storybook/react-vite';
 // 2) styles barrel registers @font-face (Pretendard), the CSS reset, and utilities.
 import '@/design-system/tokens/contract.css';
 import '@/design-system/styles';
+import { PathnameContext } from './next-mocks/router-context';
+
+// Provides the value our mocked `next/navigation` `usePathname` reads. Stories
+// for route-aware components (e.g. NavLink) set `parameters.nextPathname` to
+// exercise the active state. Defaults to '/home', the app's primary route.
+const withNextPathname: Decorator = (Story, context) => (
+  <PathnameContext.Provider value={context.parameters.nextPathname ?? '/home'}>
+    <Story />
+  </PathnameContext.Provider>
+);
 
 const withTheme: Decorator = (Story) => (
   <div
@@ -18,7 +28,7 @@ const withTheme: Decorator = (Story) => (
 );
 
 const preview: Preview = {
-  decorators: [withTheme],
+  decorators: [withNextPathname, withTheme],
   parameters: {
     layout: 'centered',
     controls: {
@@ -37,7 +47,8 @@ const preview: Preview = {
         order: [
           'Foundations',
           ['Colors', 'Typography', 'Spacing'],
-          'Components',
+          'components',
+          'app',
         ],
       },
     },
