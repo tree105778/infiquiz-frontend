@@ -1,6 +1,12 @@
+// 앱(Next)에서는 next/font가 `--font-pretendard`를 주입한다(자동 preload + size-adjust 폴백으로 CLS↓).
+// var() 폴백 `"Pretendard"`는 next/font가 없는 환경(Storybook/Vite 등)에서
+// font.css.ts의 globalFontFace로 등록된 "Pretendard" 페이스로 떨어지게 한다.
+// ⚠️ 폴백 인자가 없으면 변수 미정의 시 font-family 선언 전체가 무효화(IACVT)되므로 반드시 필요.
+const pretendard = `var(--font-pretendard, "Pretendard")`;
+
 export const fontFamily = {
-  display: `"Pretendard", "SF Pro Display", system-ui, -apple-system, sans-serif`,
-  body: `"Pretendard", "SF Pro Display", system-ui, -apple-system, sans-serif`,
+  display: `${pretendard}, "SF Pro Display", system-ui, -apple-system, sans-serif`,
+  body: `${pretendard}, "SF Pro Display", system-ui, -apple-system, sans-serif`,
   mono: `var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace`,
 } as const;
 
