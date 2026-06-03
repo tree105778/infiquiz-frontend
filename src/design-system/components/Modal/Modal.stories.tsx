@@ -11,7 +11,7 @@ import {
 } from './Modal';
 
 const meta = {
-  title: 'Components/Modal',
+  title: 'components/Modal',
   component: Modal,
   tags: ['autodocs'],
   args: {
