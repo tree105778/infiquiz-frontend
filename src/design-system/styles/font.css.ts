@@ -1,23 +1,12 @@
 import { globalFontFace } from '@vanilla-extract/css';
 
-const PRETENDARD = 'Pretendard';
-const FACES = [
-  { weight: '100', file: 'Pretendard-Thin.otf' },
-  { weight: '200', file: 'Pretendard-ExtraLight.otf' },
-  { weight: '300', file: 'Pretendard-Light.otf' },
-  { weight: '400', file: 'Pretendard-Regular.otf' },
-  { weight: '500', file: 'Pretendard-Medium.otf' },
-  { weight: '600', file: 'Pretendard-SemiBold.otf' },
-  { weight: '700', file: 'Pretendard-Bold.otf' },
-  { weight: '800', file: 'Pretendard-ExtraBold.otf' },
-  { weight: '900', file: 'Pretendard-Black.otf' },
-] as const;
-
-for (const { weight, file } of FACES) {
-  globalFontFace(PRETENDARD, {
-    src: `url("/fonts/${file}") format("opentype")`,
-    fontWeight: weight,
-    fontStyle: 'normal',
-    fontDisplay: 'swap',
-  });
-}
+// 가변 폰트 단일 @font-face.
+// 앱(Next)에서 next/font가 preload하는 PretendardVariable.woff2와 "같은 파일"을
+// Storybook/Vite(및 앱의 var() 폴백)용으로 등록한다.
+// fontWeight 범위 '100 900' = wght 축 전 구간을 한 파일로 커버.
+globalFontFace('Pretendard', {
+  src: 'url("/fonts/PretendardVariable.woff2") format("woff2")',
+  fontWeight: '100 900',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+});
