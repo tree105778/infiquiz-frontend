@@ -4,7 +4,7 @@ import { pretendard } from '@/app/fonts';
 
 export const metadata: Metadata = {
   title: 'Infiquiz',
-  description: '',
+  description: '무한으로 즐기는 생성형 AI 퀴즈',
 };
 
 export default function RootLayout({
