@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { TextInput } from './TextInput';
 
 const meta = {
-  title: 'Components/TextInput',
+  title: 'components/TextInput',
   component: TextInput,
   tags: ['autodocs'],
   parameters: { layout: 'padded' },
