@@ -30,7 +30,7 @@ const toneOptions = [
 ] as const;
 
 const meta = {
-  title: 'Components/Text',
+  title: 'components/Text',
   component: Text,
   tags: ['autodocs'],
   args: {
