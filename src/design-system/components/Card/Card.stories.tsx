@@ -25,7 +25,7 @@ const sampleContent = (
 );
 
 const meta = {
-  title: 'Components/Card',
+  title: 'components/Card',
   component: Card,
   tags: ['autodocs'],
   args: {
