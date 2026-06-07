@@ -15,5 +15,3 @@ export const footer = style({
 export const dot = style({
   color: vars.color.hairline,
 });
-
-
