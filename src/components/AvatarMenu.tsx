@@ -1,13 +1,17 @@
+'use client';
+
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { Avatar } from '@/design-system';
-import { fadeIn } from '@/design-system/styles';
+import { logout } from '@/lib/auth';
 import { fadeInUpFast } from '@/styles/page.css';
 import * as styles from './AvatarMenu.css';
 
 export function AvatarMenu({ initial }: { initial: string }) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     if (!open) return;
@@ -19,6 +23,12 @@ export function AvatarMenu({ initial }: { initial: string }) {
     document.addEventListener('mousedown', onDoc);
     return () => document.removeEventListener('mousedown', onDoc);
   });
+
+  async function onLogout() {
+    await logout();
+    router.replace('/');
+    router.refresh();
+  }
 
   return (
     <div className={styles.wrap} ref={wrapRef}>
@@ -37,11 +47,9 @@ export function AvatarMenu({ initial }: { initial: string }) {
             프로필
           </Link>
           <div className={styles.sep} />
-          <form /* action 아직 구현 안됨 */>
-            <button type="submit" className={styles.item}>
-              로그아웃
-            </button>
-          </form>
+          <button type="button" className={styles.item} onClick={onLogout}>
+            로그아웃
+          </button>
         </div>
       )}
     </div>
