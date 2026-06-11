@@ -1,5 +1,6 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 import { cx } from '@/design-system';
+import { loginUrl } from '@/lib/auth';
 import { providerButton } from './ProviderButton.css';
 
 export type OAuthProvider = 'kakao' | 'google' | 'naver';
@@ -10,19 +11,6 @@ const LABELS: Record<OAuthProvider, string> = {
   google: 'Google 계정으로 로그인',
   naver: '네이버 아이디로 로그인',
 };
-
-/**
- * Backend-mediated OAuth start URL. A same-origin path that the backend proxies
- * and 302-redirects to the provider — no supabase-js on the client.
- */
-export function providerLoginUrl(
-  provider: OAuthProvider,
-  returnTo?: string,
-): string {
-  const params = new URLSearchParams({ provider });
-  if (returnTo) params.set('return_to', returnTo);
-  return `/api/v1/auth/login?${params.toString()}`;
-}
 
 /**
  * Each provider's brand symbol — MANDATORY per their button guidelines.
@@ -111,7 +99,7 @@ export function ProviderButton({
 }: ProviderButtonProps) {
   return (
     <a
-      href={providerLoginUrl(provider, returnTo)}
+      href={loginUrl(provider, returnTo)}
       className={cx(providerButton({ provider, block }), className)}
       {...rest}
     >
