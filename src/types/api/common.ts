@@ -92,6 +92,6 @@ export interface CursorPaginationQuery {
 /** Envelope returned by cursor-paginated list endpoints. */
 export interface CursorPage<T> {
   items: T[];
-  /** `null` when there are no more pages. */
+  /** `null` when there are no more _pages. */
   nextCursor: string | null;
 }
