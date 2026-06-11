@@ -4,8 +4,20 @@ export type { ButtonProps } from './components/Button';
 export { Button, buttonClass } from './components/Button';
 export type { CardProps } from './components/Card';
 export { Card, cardClass } from './components/Card';
-export type { ModalProps } from './components/Modal';
-export { Modal } from './components/Modal';
+export type {
+  ModalCloseProps,
+  ModalDescriptionProps,
+  ModalFooterProps,
+  ModalProps,
+  ModalTitleProps,
+} from './components/Modal';
+export {
+  Modal,
+  ModalClose,
+  ModalDescription,
+  ModalFooter,
+  ModalTitle,
+} from './components/Modal';
 export type { PillProps } from './components/Pill';
 export { Pill } from './components/Pill';
 export type { SelectProps } from './components/Select';
