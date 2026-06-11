@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/design-system/tokens/contract.css';
 
 /**
- * Reusable hover surfaces shared across home/records/quiz pages. Kept in
+ * Reusable hover surfaces shared across home/records/quiz _pages. Kept in
  * a domain-shared module rather than the design system because each is
  * paired with concrete page layouts (topic card, choice card, etc.).
  */
