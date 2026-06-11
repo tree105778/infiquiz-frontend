@@ -123,6 +123,11 @@ export const OnDark: Story = {
 };
 
 export const AsHeading: Story = {
-  args: { as: 'h1', variant: 'displayLg', children: '오늘의 퀴즈' },
+  args: {
+    as: 'h1',
+    variant: 'displayLg',
+    children: '오늘의 퀴즈',
+    tone: "onPrimary"
+  },
   parameters: { layout: 'padded' },
 };
