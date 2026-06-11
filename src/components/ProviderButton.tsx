@@ -29,11 +29,11 @@ export function providerLoginUrl(
  *  - Google: the official 4-color "G", verbatim vector extracted from Google's
  *    downloadable sign-in assets (signin-assets.zip, identity branding guide).
  *  - Naver: the official N glyph (via simple-icons, which tracks the brand mark).
- *  - Kakao: a faithful bare speech-bubble reproduction (#000). The official
- *    symbol is gated behind the Kakao developer console
- *    ([도구] > [리소스 다운로드] > [카카오 로그인]); simple-icons only ships the
- *    *app icon*, which the login guide prohibits. Drop the console asset in to
- *    replace this.
+ *  - Kakao: the bare speech-bubble silhouette from Remix Icon
+ *    (ri:kakao-talk-fill, bubble subpath only, #000) — a community-standard
+ *    mark closer to the official symbol than a hand drawing, and NOT the app
+ *    icon that the login guide prohibits. The provider's own asset is gated
+ *    behind the Kakao developer console; drop it into public/ to swap in.
  */
 function ProviderLogo({ provider }: { provider: OAuthProvider }) {
   if (provider === 'kakao') {
@@ -41,7 +41,7 @@ function ProviderLogo({ provider }: { provider: OAuthProvider }) {
       <svg width={18} height={18} viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="#000000"
-          d="M12 4C7.03 4 3 7.13 3 11c0 2.46 1.63 4.62 4.1 5.86-.18.65-.66 2.4-.76 2.78-.12.47.17.46.36.33.15-.1 2.39-1.62 3.36-2.27.62.09 1.27.14 1.94.14 4.97 0 9-3.13 9-7 0-3.87-4.03-7-9-7z"
+          d="M12 3c5.8 0 10.501 3.664 10.501 8.185c0 4.52-4.701 8.184-10.5 8.184a14 14 0 0 1-1.727-.11l-4.408 2.883c-.501.265-.678.236-.472-.413l.892-3.678c-2.88-1.46-4.785-3.99-4.785-6.866c0-4.52 4.7-8.185 10.5-8.185"
         />
       </svg>
     );
