@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
-import LoginModal from '@/app/(beforeLogin)/LoginModal';
+import LoginModal from '@/app/_components/LoginModal';
 import { pretendard } from '@/app/fonts';
 
 export const metadata: Metadata = {
