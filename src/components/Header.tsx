@@ -42,7 +42,7 @@ export function Header({ profile, transparent }: HeaderProps) {
       <div className={inner}>
         <Link href={profile ? '/home' : '/'} className={logoMark}>
           <Image
-            src="/assets/logo-mark.png"
+            src="/infiquiz-logo.png"
             alt="infiquiz"
             width={36}
             height={36}
