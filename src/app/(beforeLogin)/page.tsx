@@ -1,25 +1,24 @@
+import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
+import TopicList from '@/app/_components/TopicList';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { Button, Card, Text } from '@/design-system';
-import { getTopics } from '@/lib/api';
+import { Button, Spinner, Text } from '@/design-system';
+import { getCurrentUser } from '@/lib/dal';
 
 export default async function Home() {
-  const topics = await getTopics();
+  const user = await getCurrentUser();
+  if (user) redirect('/home');
   return (
     <>
-      <div>
-        <Header />
-        <Text as="h1" variant="displayLg" tone="ink">
+      <div className="bg-[url(/gradient-mesh.svg)] bg-no-repeat">
+        <Header transparent />
+        <Text as="h1" align="center" variant="displayLg" tone="ink">
           지금 풀 수 있는 문제
         </Text>
-        <div className="grid grid-cols-4 gap-4">
-          {topics.map((t) => (
-            <Card key={t.slug} interactive>
-              <h2>{t.nameKo}</h2>
-              <p>{t.nameEn}</p>
-            </Card>
-          ))}
-        </div>
+        <Suspense fallback={<Spinner className="m-auto" size="lg" />}>
+          <TopicList />
+        </Suspense>
       </div>
       <div className="flex flex-col items-center gap-4">
         <Text as="h1" variant="displayLg" tone="ink">
