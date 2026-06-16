@@ -27,8 +27,8 @@ export default async function LoginPage({
       <ProviderButton provider="naver" returnTo={back} />
       <div className="w-full h-px bg-gray-400" />
       <Text tone="inkMute">
-        로그인하면 <Text tone="primary">이용약관</Text> 및{' '}
-        <Text tone="primary">개인정보처리방침</Text>에
+        로그인하면 <span className="text-blue-500">이용약관</span> 및{' '}
+        <span className="text-blue-500">개인정보처리방침</span>에
         <br />
         동의한 것으로 간주됩니다.
       </Text>
