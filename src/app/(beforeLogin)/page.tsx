@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { Suspense } from 'react';
-import TopicList from '@/app/_components/TopicList';
+import GridTopicList from '@/app/_components/GridTopicList';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Button, Spinner, Text } from '@/design-system';
@@ -17,7 +17,7 @@ export default async function Home() {
           지금 풀 수 있는 문제
         </Text>
         <Suspense fallback={<Spinner className="m-auto" size="lg" />}>
-          <TopicList />
+          <GridTopicList />
         </Suspense>
       </div>
       <div className="flex flex-col items-center gap-4">
