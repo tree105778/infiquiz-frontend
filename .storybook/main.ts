@@ -17,6 +17,20 @@ const config: StorybookConfig = {
       plugins: [vanillaExtractPlugin()],
       resolve: {
         alias: {
+          // NOTE: order matters — Vite matches aliases top-to-bottom and the
+          // first hit wins. More specific `@/…` entries must precede the broad
+          // `@` fallback below, or they get shadowed by it.
+          //
+          // `@/lib/action` holds a `'use server'` action whose server-only
+          // implementation (`next/headers`, `server-only`, `process.env`) the
+          // Vite builder would otherwise bundle client-side and crash on
+          // (`process is not defined`). Next hands the client a stub at the
+          // `'use server'` boundary; we mirror that with a no-op so the
+          // AvatarMenu/Header stories load.
+          '@/lib/action': resolve(
+            process.cwd(),
+            '.storybook/app-mocks/action.ts',
+          ),
           // Explicit alias so both the app code and vanilla-extract's child
           // compile resolve `@/...` to src/ (matches tsconfig paths).
           '@': resolve(process.cwd(), 'src'),
