@@ -17,7 +17,6 @@ const meta = {
     onExit: () => {},
   },
   argTypes: {
-    mode: { control: 'inline-radio', options: ['fixed', 'practice'] },
     onExit: { control: false },
   },
 } satisfies Meta<typeof QuizHeader>;
@@ -26,18 +25,24 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-// 도전 모드, mid-session: question 3 of 10, progress bar at 20%.
+// Fixed session, mid-session: question 3 of 10, progress bar at 20%.
 export const Fixed: Story = {
-  args: { mode: 'fixed', questionIndex: 2, total: 10, answered: false },
+  args: { questionIndex: 2, total: 10, answered: false },
 };
 
-// 도전 모드 feedback phase: the current question is graded, so the counter
+// Fixed session feedback phase: the current question is graded, so the counter
 // reads 3/10 and the bar advances to include it (30%).
 export const FixedAnswered: Story = {
-  args: { mode: 'fixed', questionIndex: 2, total: 10, answered: true },
+  args: { questionIndex: 2, total: 10, answered: true },
 };
 
-// 연습 모드: endless practice — counter shows "N문제 풀이 중", no progress bar.
+// Endless practice — no `total`, so the counter shows "N문제 풀이 중" and there
+// is no progress bar.
 export const Practice: Story = {
-  args: { mode: 'practice', questionIndex: 6 },
+  args: { questionIndex: 6 },
+};
+
+// Timer hidden — `elapsedSeconds` omitted, so no ⏱ block renders.
+export const NoTimer: Story = {
+  args: { questionIndex: 2, total: 10, elapsedSeconds: undefined },
 };
