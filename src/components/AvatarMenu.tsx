@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Avatar } from '@/design-system';
-import { fadeIn } from '@/design-system/styles';
+import { logout } from '@/lib/action';
 import { fadeInUpFast } from '@/styles/page.css';
 import * as styles from './AvatarMenu.css';
 
@@ -39,7 +39,7 @@ export function AvatarMenu({ initial }: { initial: string }) {
             프로필
           </Link>
           <div className={styles.sep} />
-          <form /* action 아직 구현 안됨 */>
+          <form action={logout}>
             <button type="submit" className={styles.item}>
               로그아웃
             </button>
