@@ -190,6 +190,12 @@ export interface SessionDetailAttempt {
   ratingBefore: number;
   ratingAfter: number;
   createdAt: ISODateString;
+  /** Post-session review fields (enriched server-side from the quiz item). */
+  stem: string;
+  /** Display-ready user answer (multiple_choice → chosen option's text). */
+  userAnswer: string;
+  correctAnswer: string;
+  explanation: string | null;
 }
 
 /**
